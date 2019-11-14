@@ -34,14 +34,17 @@ app.set("layout", "layouts/layout"); // Chứa các header footer
 app.use(expressLayouts); // Sửa dụng express layouts
 app.use(express.static("public")); // Nơi chứa public/css, js, img
 
+// Body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Router
 const indexRouter = require("./routes/index");
+const authorRouter = require("./routes/author");
 
 // PORT
 app.listen(process.env.PORT || 3000);
 
 // Routes
 app.use("/", indexRouter);
+app.use("/author", authorRouter);
