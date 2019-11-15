@@ -32,15 +32,18 @@ app.set("layout", "layouts/layout"); // Chứa các header footer
 
 // Middlewares
 app.use(expressLayouts); // Sửa dụng express layouts
-app.use(express.static("public")); // Nơi chứa public/css, js, img
+app.use(express.static("public")); // Nơi chứa public/css, js, img, uploads
 
 // Body parser
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(express.json());
 
 // Router
 const indexRouter = require("./routes/index");
 const authorRouter = require("./routes/author");
+const bookRouter = require("./routes/book");
 
 // PORT
 app.listen(process.env.PORT || 3000);
@@ -48,3 +51,4 @@ app.listen(process.env.PORT || 3000);
 // Routes
 app.use("/", indexRouter);
 app.use("/author", authorRouter);
+app.use("/book", bookRouter);

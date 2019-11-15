@@ -1,0 +1,8 @@
+<div class="container">
+  <h2 class="text-center">New Book</h2>
+  <form action="/book/new" method="POST" enctype="multipart/form-data">
+    <%- include('./_form_fields.ejs') %>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a href="/book" class="btn btn-danger">Cancel</a>
+  </form>
+</div>
