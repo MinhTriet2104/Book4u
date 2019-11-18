@@ -35,10 +35,13 @@ app.use(expressLayouts); // Sửa dụng express layouts
 app.use(express.static("public")); // Nơi chứa public/css, js, img, uploads
 
 // Body parser
-app.use(express.urlencoded({
-  extended: true
-}));
-app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+    limit: "50mb"
+  })
+);
+app.use(express.json({ extended: true, limit: "50mb" }));
 
 // Router
 const indexRouter = require("./routes/index");

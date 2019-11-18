@@ -1,13 +1,24 @@
 <div class="row">
   <div class="form-group col-md-6">
     <label for="title" class="col-form-label">Title</label>
-    <input type="text" class="form-control" id="title" name="title" placeholder="Book title" value="<%= book.name %>" />
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      placeholder="Book title"
+      value="<%= book.name %>"
+    />
   </div>
   <div class="form-group col-md-6">
     <label class="col-form-label">Author</label>
     <select name="author" class="custom-select mr-sm-2">
       <% authors.forEach(author => { %> <% if (author.id === book.author) { %>
-      <option selected label="<%= author.name %>" value="<%= author.id %>"></option>
+      <option
+        selected
+        label="<%= author.name %>"
+        value="<%= author.id %>"
+      ></option>
       <% } else { %>
       <option label="<%= author.name %>" value="<%= author.id %>"></option>
       <% } %> <% }) %>
@@ -17,22 +28,46 @@
 <div class="row">
   <div class="form-group col-md-6">
     <label for="publishDate" class="col-form-label">Publish Date</label>
-    <input type="date" class="form-control" id="publishDate" name="publishDate"
-      value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>" />
+    <input
+      type="date"
+      class="form-control"
+      id="publishDate"
+      name="publishDate"
+      value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>"
+    />
   </div>
   <div class="form-group col-md-6">
     <label for="pageCount" class="col-form-label">Page Count</label>
-    <input type="number" class="form-control" id="pageCount" name="pageCount" min="1" placeholder="Page Count"
-      value="<%= book.pageCount %>" />
+    <input
+      type="number"
+      class="form-control"
+      id="pageCount"
+      name="pageCount"
+      min="1"
+      placeholder="Page Count"
+      value="<%= book.pageCount %>"
+    />
   </div>
 </div>
 <div class="row">
   <div class="form-group col-md-6">
     <label for="cover" class="col-form-label">Cover</label>
-    <input type="file" class="form-control-file" id="cover" name="cover" />
+    <input
+      type="file"
+      class="form-control-file filepond"
+      id="cover"
+      name="cover"
+    />
   </div>
   <div class="form-group col-md-6">
     <label for="description" class="col-form-label">Description</label>
-    <textarea type="file" class="form-control" id="description" name="description"><%= book.description %></textarea>
+    <textarea
+      type="file"
+      class="form-control"
+      id="description"
+      name="description"
+    >
+<%= book.description %></textarea
+    >
   </div>
 </div>
