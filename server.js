@@ -6,6 +6,7 @@ if (process.env.NODE_ENV !== "production") {
 const express = require("express");
 const app = express();
 const expressLayouts = require("express-ejs-layouts");
+const methodOverride = require("method-override");
 
 // Connect db
 const mongoose = require("mongoose");
@@ -33,6 +34,7 @@ app.set("layout", "layouts/layout"); // Chứa các header footer
 // Middlewares
 app.use(expressLayouts); // Sửa dụng express layouts
 app.use(express.static("public")); // Nơi chứa public/css, js, img, uploads
+app.use(methodOverride("_method")); // Override method thành PUT, DELETE
 
 // Body parser
 app.use(
