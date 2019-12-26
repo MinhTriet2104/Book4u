@@ -13,7 +13,7 @@
   <div class="form-group col-md-6">
     <label class="col-form-label">Author</label>
     <select name="author" class="custom-select mr-sm-2">
-      <% authors.forEach(author => { %> <% if (author.id === book.author) { %>
+      <% authors.forEach(author => { %> <% if (author.id == book.author) { %>
       <option
         selected
         label="<%= author.name %>"
