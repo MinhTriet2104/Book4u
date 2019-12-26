@@ -5,12 +5,14 @@ if (booksByAuthor.length) { %>
 <h2>Books By Author</h2>
 <div class="books mt-5">
   <% booksByAuthor.forEach(book => { %>
-  <img
-    src="<%= book.coverImagePath %>"
-    alt="book-cover-img"
-    height="300"
-    width="200"
-  />
+  <a href="/book/<%= book.id %>">
+    <img
+      src="<%= book.coverImagePath %>"
+      alt="book-cover-img"
+      height="300"
+      width="200"
+    />
+  </a>
   <% }) %>
 </div>
 <% } %>
